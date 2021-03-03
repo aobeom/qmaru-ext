@@ -11,7 +11,7 @@ save_folder = "downloads"
 def y2b_download(url):
     filename = '%(title)s.%(ext)s'
     ydl_opts = {
-        'format': 'best[filesize<200M,ext=mp4]',
+        'format': 'bestvideo[filesize<200M][ext=mp4]+bestaudio[ext=m4a]/mp4',
         'outtmpl': os.path.join(work_dir, save_folder, filename),
         'quiet': True,
     }
@@ -26,9 +26,6 @@ def y2b_download(url):
 
 
 def main():
-    # Test URL:
-    # https://www.youtube.com/watch?v=dpw9bLLm6OA
-    # https://www.youtube.com/watch?v=0F9RHJfiR9I
     url = sys.argv[1]
     results = y2b_download(url)
     print(results)
