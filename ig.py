@@ -30,7 +30,10 @@ def ig_filter(data):
     if len(raw_data) != 0:
         raw_data = raw_data[0]
         main_json = json.loads(raw_data)
-        entry_data_data = main_json["entry_data"]["PostPage"][0]
+        try:
+            entry_data_data = main_json["entry_data"]["PostPage"][0]
+        except BaseException:
+            return []
         if entry_data_data:
             insta_core = main_json["entry_data"]["PostPage"][0]["graphql"]["shortcode_media"]
         else:
