@@ -87,9 +87,9 @@ def ig_download(url):
 
 def main():
     # https://www.instagram.com/p/CNFV0Bsgrew/
-    url = sys.argv[1]
-    results = ig_download(url)
-    print(json.dumps(results))
+    # url = sys.argv[1]
+    # results = ig_download(url)
+    print(json.dumps([]))
 
 
 if __name__ == "__main__":
